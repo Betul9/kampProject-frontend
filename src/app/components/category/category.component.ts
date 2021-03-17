@@ -22,6 +22,11 @@ export class CategoryComponent implements OnInit {
       this.categories = response.data
     })   
   }
+
+  removeCurrentCategory(){
+    this.currentCategory = {categoryId:0, categoryName:""} 
+  }
+
   setCurrentCategory(category:Category){
     this.currentCategory = category;
   }
@@ -35,12 +40,13 @@ export class CategoryComponent implements OnInit {
   }
 
   getAllCategoryClass(){
-       if(!this.currentCategory){
-        return "list-group-item active"
-       }
-       else{
-        return "list-group-item"
-       }
+    let defaultCategory:Category = {categoryId:0,categoryName:""}
+    if(this.currentCategory.categoryId == defaultCategory.categoryId){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+    }
   }
 
 }
