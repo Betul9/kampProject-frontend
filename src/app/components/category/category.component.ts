@@ -24,7 +24,7 @@ export class CategoryComponent implements OnInit {
   }
 
   removeCurrentCategory(){
-    this.currentCategory = {categoryId:0, categoryName:""} 
+    this.currentCategory = {categoryId:-1, categoryName:""} 
   }
 
   setCurrentCategory(category:Category){
@@ -40,7 +40,7 @@ export class CategoryComponent implements OnInit {
   }
 
   getAllCategoryClass(){
-    let defaultCategory:Category = {categoryId:0,categoryName:""}
+    let defaultCategory:Category = {categoryId:-1,categoryName:""}
     if(this.currentCategory.categoryId == defaultCategory.categoryId){
       return "list-group-item active"
     }
